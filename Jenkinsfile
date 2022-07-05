@@ -7,6 +7,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: "testing-cred", usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
                     sh 'echo $USER $PASSWORD'
                     sh 'echo Building After Creds..'
+                    sh 'ls -la'
                 }
             }
         }
