@@ -3,12 +3,11 @@ pipeline {
 
     stages {
         stage('Build') {
-
             steps {
                 withCredentials([usernamePassword(credentialsId: "testing-cred", usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
                     echo $USER $PASSWORD
+                    echo 'Building After Creds..'
                 }
-                echo 'Building After Creds..'
             }
         }
         stage('Test') {
