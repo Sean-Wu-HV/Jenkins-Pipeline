@@ -8,7 +8,7 @@ pipeline {
                     sh 'echo $USER $PASSWORD'
                     sh 'echo Building After Creds..'
                     sh 'chmod 711 cmpstring.sh'
-                    sh '.cmpstring.sh $PASSWORD password-test'
+                    sh './cmpstring.sh $PASSWORD password-test'
                 }
             }
         }
