@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 withCredentials([usernamePassword(credentialsId: "testing-cred", usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
-                    with.withRegistry("https://registry.hub.docker.com/v2/"){
+                    docker.withRegistry("https://registry.hub.docker.com/v2/"){
                         def image = docker.image("ubuntu")
                         image.pull()
                         image.inside("") {
